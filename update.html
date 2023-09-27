@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update</title>
+    <style>
+    input[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px 18px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.active {
+  background-color: #04AA6D;
+}
+
+
+    </style>
+</head>
+<body>
+<ul>
+    <li><a class="active" href="/">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a style="float:right">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </a></li>
+</ul>
+<hr>
+
+<div class="container-my3">
+    <h2>Update Todo</h2>
+    <form action="/update/{{todo.Sno}}" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Todo Title</label>
+            <br>
+            <input type="text" class="form-control" id="title" name="title" value="{{todo.title}}" >
+        </div>
+        <div class="mb-3">
+            <label for="des" class="form-label">Todo Description</label>
+            <br>
+            <input type="text" class="form-control" id="des" name="des" value="{{todo.des}}" >
+        </div>
+        <div class="button-group">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="/" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<style>
+  .container-my3 {
+    text-align: center;
+  }
+
+  .button-group {
+    display: inline-block;
+    margin-top: 10px; /* Add some spacing between the button group and the form elements */
+  }
+
+  .btn-secondary {
+    /* Style the "Cancel" link to look like a button */
+    display: inline-block;
+    padding: 2px 6px;
+    margin-left: 24px; /* Add some spacing between the buttons */
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .btn-secondary:hover {
+    background-color: #e9ecef;
+  }
+</style>
+
+
+<hr>
+
+</body>
+</html>
